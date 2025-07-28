@@ -577,14 +577,18 @@ nav li.active a::after {
 }
 
 .blogs .blog-list {
+  overflow: hidden;
   display: flex;
   gap: 30px;
   margin-top: 55px;
 }
 
 .blogs .item {
-  width: 33.33%;
+  flex-shrink: 0;
+  width: calc(33.33% - 20px);
   background-color: #ffffff;
+  /* transition: all ease 0.5s;
+  transform: translateX(-100%); */
 }
 
 .blogs .item:hover {
@@ -644,8 +648,31 @@ nav li.active a::after {
 
 .blogs .item .btn {
   margin-top: 12px;
+  font-size: 1.4rem;
 }
 
 .blogs .item .btn:hover {
   background-color: var(--primary-color);
+}
+
+.blogs .dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 38px;
+}
+
+.blogs .dot {
+  /* display: inline-block;
+  gap: 6px; */
+  width: 6px;
+  height: 6px;
+  background-color: #5f5b53;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.blogs .dot.active {
+  background-color: var(--primary-color);
+  cursor: d;
 }
